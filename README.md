@@ -1,16 +1,19 @@
 # mobilivewidgets
 
-A new Flutter application.
+<h1 align="center">mobiler.dev - Mobilive - Widgets #3</h1>
 
-## Getting Started
+<div align="center">
 
-This project is a starting point for a Flutter application.
+An example app of widgets in Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+</div>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Screenshots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/13484562/81337863-5e5eb700-90b4-11ea-9648-9a3177661bb4.png" height = "550px">
+<img src="https://user-images.githubusercontent.com/13484562/81337908-733b4a80-90b4-11ea-95b4-a799cba2b04c.png" height = "550px">
+
+
+## Contributing
+
+All contributions are welcome
