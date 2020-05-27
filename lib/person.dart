@@ -1,13 +1,25 @@
-import 'package:flutter/material.dart';
-
 class Person {
   // variables
+  String id;
   String name;
   int age;
 
   // constructor
-  Person(String name, {int age}) {
-    this.name = name;
-    this.age = age;
+  Person({
+    this.id,
+    this.age,
+    this.name,
+  });
+
+  Person.fromMap(Map snapshot, String id)
+      : id = id ?? '',
+        name = snapshot['name'] ?? '',
+        age = snapshot['age'] ?? '';
+
+  toJson() {
+    return {
+      "name": name,
+      "age": age,
+    };
   }
 }

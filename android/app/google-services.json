@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "683311054918",
+    "firebase_url": "https://mobilive-firestore.firebaseio.com",
+    "project_id": "mobilive-firestore",
+    "storage_bucket": "mobilive-firestore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683311054918:android:be85c6224c53b16010ca47",
+        "android_client_info": {
+          "package_name": "com.example.mobilivestatemanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683311054918-jstkjgdmfh784tn5534agaj3i9lm1c3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobilivestatemanagement",
+            "certificate_hash": "0505b3630134fd71c9366fe222dec71b9e668c0b"
+          }
+        },
+        {
+          "client_id": "683311054918-inqgdfvnickkdai8gidsece2d0gu8k4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwXjD3GisnG0f2jNGcMg0zRd7ZofwPh9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683311054918-inqgdfvnickkdai8gidsece2d0gu8k4o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

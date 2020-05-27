@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Person> persons = new List();
+
   @override
   void initState() {
     super.initState();
@@ -19,35 +21,48 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var personListModel = Provider.of<PersonListModel>(context);
-    print(personListModel.personList.length.toString());
 
     return Scaffold(
       appBar: AppBar(
         title: Text("MobiLive"),
       ),
-      body: Container(
-        child: ListView.separated(
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 5,
+      body: StreamBuilder(
+        stream: personListModel.fetchPerson(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            persons = snapshot.data.documents
+                .map<Person>((doc) => Person.fromMap(doc.data, doc.documentID))
+                .toList();
+
+            return Container(
+              child: ListView.separated(
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    height: 5,
+                  );
+                },
+                itemCount: persons.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                      title: Text(persons[index].name),
+                      subtitle:
+                      Text(persons[index].age.toString()),
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete_outline),
+                        onPressed: () =>
+                          //personListModel.removePerson(index);
+                          personListModel.deletePerson(persons[index].id)
+
+                      ));
+                },
+              ),
             );
-          },
-          itemCount: personListModel.personList.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-                title: Text(personListModel.personList[index].name),
-                subtitle:
-                    Text(personListModel.personList[index].age.toString()),
-                trailing: IconButton(
-                  icon: Icon(Icons.delete_outline),
-                  onPressed: () {
-                    //personListModel.removePerson(index);
-                    personListModel.personList.removeAt(index);
-                    print(personListModel.personList.length.toString());
-                  },
-                ));
-          },
-        ),
+          }
+
+          else {
+          return Text('fetching');
+          }
+        }
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

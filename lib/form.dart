@@ -46,11 +46,10 @@ class _FormPageState extends State<FormPage> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Person person = Person(nameController.text,
+                    Person person = Person(name:nameController.text,
                         age: int.parse(numberController.text));
                     //personList.add(person);
-                    Provider.of<PersonListModel>(context, listen: false)
-                        .addPerson(person);
+                    Provider.of<PersonListModel>(context, listen: false).addPerson(person);
                     Navigator.pop(context);
                   },
                   color: Colors.blue,
